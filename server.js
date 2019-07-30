@@ -2,8 +2,11 @@ const express = require('express');
 const port = 5000;
 const path = require('path')
 const countryRoute = require('./routes/countryRoute');
+const bodyParser = require('body-parser')
 
 const app = express();
+
+app.use(bodyParser.json())
 
 app.listen(port, (err) => {
     if (err) console.log(err)

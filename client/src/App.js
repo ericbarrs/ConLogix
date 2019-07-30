@@ -8,9 +8,21 @@ export default class App extends React.Component {
     inputField: 0
   }
   componentWillMount() {
-    fetch('/api/country')
+    fetch('https://api.ipify.org/?format=json')
       .then(res => res.json())
-      .then(data => this.setState({ data: data }))
+      .then(ip => {
+        this.setState(ip)
+        fetch('/api/country', {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            'Content-Type': "application/json"
+          },
+          body: JSON.stringify({ ip: this.state.ip })
+        })
+          .then(res => res.json())
+          .then(data => this.setState({ data: data }))
+      })
   }
 
   inputHandler(e) {
