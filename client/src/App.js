@@ -30,7 +30,7 @@ export default class App extends React.Component {
         <div className="App">
           <div className="Header">
             <h1>You are in {this.state.data.myCountry.Country}</h1>
-            <input onChange={(e) => this.inputHandler(e)} placeholder="input your currency">{}</input>
+            <input type="number" onChange={(e) => this.inputHandler(e)} placeholder="input your currency">{}</input>
           </div>
           <Main input={this.state.inputField} data={this.state.data.myCountry} />
           <Footer data={this.state} />

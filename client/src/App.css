@@ -53,13 +53,15 @@ span{
 @media only screen and (max-width: 800px) {
     html, body, .App, #root{
       height:100%;
-         font-size:px;
     }
-
+    p{
+      margin: 0;
+      padding: 10px;
+    }
     .Header input{
       height: 30px;
       width: 35vw;
-      font-size:15px;
+      font-size:10px;
     }
     .Header h1 {
       margin: 30px;
